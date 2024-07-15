@@ -6,19 +6,33 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f0f8ff;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 h1 {
     margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 
 #cityInput {
     padding: 10px;
     font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
@@ -29,6 +43,9 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -40,16 +57,99 @@ button:hover {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
+    max-width: 500px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
-    margin: 0;
+    margin: 0 0 10px 0;
     font-size: 1.5em;
+    color: #333;
 }
 
 p {
     margin: 5px 0;
+    color: #555;
+}
+
+.hourly-forecast {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.daily-forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.forecast-item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Adjusted margin-bottom */
+}
+
+.forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    border: none; /* Remove border */
+    background-color: transparent; /* Remove background */
+    min-width: 70px;
+    font-size: 0.8em; /* Reduce the font size */
+}
+
+
+.forecast-item img.weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-item p {
+    margin: 3px 0; /* Adjust margin for better spacing */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    #weather {
+        width: 90%;
+    }
+
+    .forecast-item {
+        min-width: 60px;
+        font-size: 0.7em; /* Further reduce the font size for smaller screens */
+    }
+
+    .forecast-item img.weather-icon {
+        width: 40px;
+        height: 40px;
+    }
 }
